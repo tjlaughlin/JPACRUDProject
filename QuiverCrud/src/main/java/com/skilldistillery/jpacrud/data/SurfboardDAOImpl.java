@@ -47,6 +47,39 @@ public class SurfboardDAOImpl implements SurfboardDAO {
 		return em.find(Surfboard.class, id);
 	}
 	
+	@Override
+	public Surfboard update(Surfboard board) {
+//		EntityManager em = emf.createEntityManager();
+//		Find the actor to be updated
+		int id = board.getId();
+		Surfboard dbBoard = em.find(Surfboard.class, id);
+
+//		start your transaction
+		em.getTransaction().begin();
+
+//		assign all the data from the sent in Actor object to the one in the database 
+
+		dbBoard.setBrand(board.getBrand());
+		dbBoard.setPrice(board.getPrice());
+		dbBoard.setLength(board.getLength());
+		dbBoard.setVolume(board.getVolume());
+		dbBoard.setTailShape(board.getTailShape());
+		dbBoard.setBoardType(board.getBoardType());
+		dbBoard.setName(board.getName());
+		dbBoard.setWaveHeight(board.getName());
+
+		em.flush();
+
+		em.getTransaction().commit();
+
+		
+		
+		
+		
+		em.close();
+		return dbBoard;
+	}
+	
 	
 
 

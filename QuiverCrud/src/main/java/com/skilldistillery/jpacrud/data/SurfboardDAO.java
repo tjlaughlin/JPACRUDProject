@@ -12,5 +12,6 @@ public interface SurfboardDAO {
 	Surfboard fingSurfboardByType(String type);
 	List<Surfboard> findBoardsByWaveHeight(String height);
 	List<Surfboard> listAllBoards();
+	Surfboard update(Surfboard board);
 	
 }
