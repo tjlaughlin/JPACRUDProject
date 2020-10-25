@@ -50,15 +50,28 @@ public class SurfboardController {
 	}
 	
 	@RequestMapping(path = "updateBoard.do", method = RequestMethod.GET)
-	public String updateBoard(Model model, int id) {
+	public String updateBoard(Model model, int id, Surfboard board) {
 		
 		Surfboard dbBoard = boardDAO.findById(id);
 		
-		
-		
-		
+		dbBoard = boardDAO.update(id, board);
 		
 		model.addAttribute("board", dbBoard);
+		
+		return "updated";
+	}
+	
+	
+	
+	
+	@RequestMapping(path = "deleteBoard.do", method = RequestMethod.GET)
+	public String deleteBoard(Model model, int id) {
+		
+		Surfboard board = boardDAO.findById(id);
+		
+		boardDAO.delete(id);
+		
+		model.addAttribute("board", board);
 		
 		return "updated";
 	}

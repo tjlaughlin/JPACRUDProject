@@ -48,37 +48,49 @@ public class SurfboardDAOImpl implements SurfboardDAO {
 	}
 	
 	@Override
-	public Surfboard update(Surfboard board) {
+	public Surfboard update(int id, Surfboard board) {
 //		EntityManager em = emf.createEntityManager();
 //		Find the actor to be updated
-		int id = board.getId();
-		Surfboard dbBoard = em.find(Surfboard.class, id);
+		Surfboard dbboard = em.find(Surfboard.class, id);
 
 //		start your transaction
-		em.getTransaction().begin();
+//		em.getTransaction().begin();
 
 //		assign all the data from the sent in Actor object to the one in the database 
 
-		dbBoard.setBrand(board.getBrand());
-		dbBoard.setPrice(board.getPrice());
-		dbBoard.setLength(board.getLength());
-		dbBoard.setVolume(board.getVolume());
-		dbBoard.setTailShape(board.getTailShape());
-		dbBoard.setBoardType(board.getBoardType());
-		dbBoard.setName(board.getName());
-		dbBoard.setWaveHeight(board.getName());
+		dbboard.setBrand(board.getBrand());
+		dbboard.setPrice(board.getPrice());
+		dbboard.setLength(board.getLength());
+		dbboard.setVolume(board.getVolume());
+		dbboard.setTailShape(board.getTailShape());
+		dbboard.setBoardType(board.getBoardType());
+		dbboard.setName(board.getName());
+		dbboard.setWaveHeight(board.getName());
 
-		em.flush();
+		em.persist(dbboard);
+//		em.flush();
 
-		em.getTransaction().commit();
+//		em.getTransaction().commit();
 
 		
 		
 		
 		
-		em.close();
-		return dbBoard;
+//		em.close();
+		return board;
 	}
+	
+	
+	
+	
+	@Override
+	public boolean delete(int id) {
+		Surfboard board = em.find(Surfboard.class, id);
+		em.remove(board);
+		boolean boardWasDeleted = ! em.contains(board);
+		return boardWasDeleted;
+	}
+	
 	
 	
 

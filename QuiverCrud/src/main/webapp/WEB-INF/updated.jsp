@@ -12,10 +12,15 @@
 		<c:when test="${! empty board }">
 			board updated
 			<br>
-			${board.name }
+			${board.name}
 		
 		
 		</c:when>
+		<c:when test="${empty board }">
+			board deleted
+			<br>
+		</c:when>
+		
 		<c:otherwise>
 			Unable to update board
 		</c:otherwise>
