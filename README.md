@@ -6,7 +6,7 @@
 
 - This program is an application for users to interact with a database i created my self. They can navigate through the app and get board information as well as gives them the ability to add a film and delete a board.
 
-##Lessons Used
+#Lessons Used
 - Object Relational Mapping
 - SQL database
 - MAMP
