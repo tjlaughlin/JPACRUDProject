@@ -14,5 +14,6 @@ public interface SurfboardDAO {
 	List<Surfboard> listAllBoards();
 	Surfboard update(int id, Surfboard board);
 	boolean delete(int id);
+	Surfboard add(Surfboard board);
 	
 }

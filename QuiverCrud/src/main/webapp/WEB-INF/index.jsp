@@ -12,10 +12,21 @@
 <div class="container-fluid">
 	<h1>Welcome to Tj's quiver</h1><br>
 	<h3>Search by board brand</h3>
+	
+	<br>
+	
 	<form action="getBoard.do" method="GET">
 		Brand: <input type="text" name="id" /> <input type="submit"
 			value="Search" />
 	</form><br>
+	
+	
+		<form action="addBoard.do" method="GET">
+		<input type="hidden" name="" value="" /> <input type="submit"
+			value="Add board" />
+	</form><br>
+	
+	
 	<h3>List of all boards</h3><br>
 	<table class="table table-striped table-hover">
 		<thead class="thead thead-dark">

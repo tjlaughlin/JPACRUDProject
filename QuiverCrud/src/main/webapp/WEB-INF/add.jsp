@@ -5,17 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiver edit</title>
+<title>Film Query</title>
 </head>
 <body>
 
-	 <c:choose>
-		<c:when test="${! empty board }">
-
-			Board you are editing: ${board.brand} - ${board.name}
+			<h3>Add board</h3> 
 			<br>
 			
-			<form action="updateBoard.do" method="GET">
+			<form action="addedBoard.do" method="GET">
+				<label for="brand">Id:</label> <input type="text" name="id"
+					value="${board.id}" /> <input type="hidden" name="id"
+					value="${board.id}" /> 
+			<br>
 				<label for="brand">Brand:</label> <input type="text" name="brand"
 					value="${board.brand}" /> <input type="hidden" name="id"
 					value="${board.id}" /> 
@@ -49,16 +50,16 @@
 					value="${board.id}" /> 
 			<br>
 			<button type=“submit” name=“id” value=“${board.id}“>Submit</button>
-			</form><br>
+			</form>
+			
+			<br>
+			
 		
+		<br>
+		<br>
 			<a href="/">Back to home page</a>
 
-
-		</c:when>
-		<c:otherwise>
-			<p>No result</p>
-		</c:otherwise>
-	</c:choose>
+		
  
 </body>
 </html>

@@ -24,8 +24,8 @@
 		<c:otherwise>
 			Unable to update board
 		</c:otherwise>
-	</c:choose>
-	<%-- <a href="Films.do?filmId=${updatedFilmId }">Return</a> --%>
+	</c:choose><br>
+		<a href="/">Back to home page</a>
 
 </body>
 </html>

@@ -72,15 +72,38 @@ public class SurfboardDAOImpl implements SurfboardDAO {
 
 //		em.getTransaction().commit();
 
-		
-		
-		
-		
 //		em.close();
 		return board;
 	}
 	
-	
+	public Surfboard add(Surfboard board) {
+//		EntityManager em = emf.createEntityManager();
+//		Find the actor to be updated
+		Surfboard dbboard = new Surfboard();
+		
+//		start your transaction
+//		em.getTransaction().begin();
+		
+//		assign all the data from the sent in Actor object to the one in the database 
+		
+//		dbboard.setId(1);
+		dbboard.setBrand(board.getBrand());
+		dbboard.setPrice(board.getPrice());
+		dbboard.setLength(board.getLength());
+		dbboard.setVolume(board.getVolume());
+		dbboard.setTailShape(board.getTailShape());
+		dbboard.setBoardType(board.getBoardType());
+		dbboard.setName(board.getName());
+		dbboard.setWaveHeight(board.getName());
+		
+		em.persist(dbboard);
+//		em.flush();
+		
+//		em.getTransaction().commit();
+		
+//		em.close();
+		return dbboard;
+	}
 	
 	
 	@Override
@@ -90,6 +113,9 @@ public class SurfboardDAOImpl implements SurfboardDAO {
 		boolean boardWasDeleted = ! em.contains(board);
 		return boardWasDeleted;
 	}
+	
+	
+	
 	
 	
 	

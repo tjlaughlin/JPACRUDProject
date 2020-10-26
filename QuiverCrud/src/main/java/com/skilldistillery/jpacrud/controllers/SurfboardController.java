@@ -63,6 +63,23 @@ public class SurfboardController {
 	
 	
 	
+	@RequestMapping(path = "addBoard.do", method = RequestMethod.GET)
+	public String directToAdd() {
+		return "add";
+	}
+	
+	
+	@RequestMapping(path = "addedBoard.do", method = RequestMethod.GET)
+	public String addBoard(Model model, Surfboard board) {
+		
+		
+		Surfboard dbBoard = boardDAO.add(board);
+		
+		model.addAttribute("board", board);
+		
+		return "updated";
+	}
+	
 	
 	@RequestMapping(path = "deleteBoard.do", method = RequestMethod.GET)
 	public String deleteBoard(Model model, int id) {
@@ -75,6 +92,7 @@ public class SurfboardController {
 		
 		return "updated";
 	}
+	
 	
 	
 	
