@@ -30,10 +30,26 @@ public class Surfboard {
 	private String waveHeight;
 	
 	
+//	just a thought for you.. try checking you constructor and make sure it isn’t looking for an id. 
+//	If it was that would definitely require you to put that info in. Just a thought. Nice work man it looked great
+	
+	
+	
 	
 	public Surfboard() {
-		super();
 	}
+
+	public Surfboard(String brand, double price, String length, String volume, String tailShape, String boardType,
+		String name, String waveHeight) {
+	this.brand = brand;
+	this.price = price;
+	this.length = length;
+	this.volume = volume;
+	this.tailShape = tailShape;
+	this.boardType = boardType;
+	this.name = name;
+	this.waveHeight = waveHeight;
+}
 
 	public int getId() {
 		return id;

@@ -92,7 +92,6 @@ public class SurfboardDAOImpl implements SurfboardDAO {
 		
 //		assign all the data from the sent in Actor object to the one in the database 
 		
-//		dbboard.setId(1);
 		dbboard.setBrand(board.getBrand());
 		dbboard.setPrice(board.getPrice());
 		dbboard.setLength(board.getLength());
