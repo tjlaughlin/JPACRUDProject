@@ -23,6 +23,12 @@ public class SurfboardDAOImpl implements SurfboardDAO {
 		return em.find(Surfboard.class, brand);
 	}
 
+	
+	@Override
+	public Surfboard findSurfboardByName(String name) {
+		return em.find(Surfboard.class, name);
+	}
+	
 	@Override
 	public Surfboard fingSurfboardByType(String type) {
 		return em.find(Surfboard.class, type);

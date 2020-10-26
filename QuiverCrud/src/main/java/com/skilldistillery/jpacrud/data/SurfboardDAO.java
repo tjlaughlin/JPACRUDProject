@@ -15,5 +15,7 @@ public interface SurfboardDAO {
 	Surfboard update(int id, Surfboard board);
 	boolean delete(int id);
 	Surfboard add(Surfboard board);
+	Surfboard findSurfboardByName(String name);
+	
 	
 }

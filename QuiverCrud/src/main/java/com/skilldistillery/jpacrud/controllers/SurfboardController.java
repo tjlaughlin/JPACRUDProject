@@ -39,6 +39,29 @@ public class SurfboardController {
 		
 		return "show";
 	}
+	
+	@RequestMapping(path = "getBoardBrand.do", method = RequestMethod.GET, params = "brand")
+	public String showBrand(String brand, Model model) {
+		
+		Surfboard board = boardDAO.findSurfboardByBrand(brand);
+		
+		model.addAttribute("board", board);
+		
+		return "show";
+	}
+	
+	@RequestMapping(path = "getBoardName.do", method = RequestMethod.GET, params = "name")
+	public String showName(String name, Model model) {
+		
+		Surfboard board = boardDAO.findSurfboardByName(name);
+		
+		model.addAttribute("board", board);
+		
+		return "show";
+	}
+	
+	
+	
 	@RequestMapping(path = "getBoardUpdate.do", method = RequestMethod.GET)
 	public String getBoardToUpdate(Integer id, Model model) {
 		
